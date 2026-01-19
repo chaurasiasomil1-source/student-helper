@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Helper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f6fb;
+      padding: 20px;
+    }
+    .box {
+      background: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    button {
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🎓 Student Helper</h1>
+
+<div class="box">
+  <h2>📌 Motivation</h2>
+  <p id="quote">Loading...</p>
+  <button onclick="newQuote()">New Quote</button>
+</div>
+
+<div class="box">
+  <h2>⏰ Study Timetable</h2>
+  <p>Morning: Study new topics</p>
+  <p>Afternoon: Practice questions</p>
+  <p>Evening: Revision</p>
+</div>
+
+<div class="box">
+  <h2>📚 Exam Tips</h2>
+  <p>✔ Revise daily</p>
+  <p>✔ Practice previous papers</p>
+  <p>✔ Sleep well before exam</p>
+</div>
+
+<button>More Features Coming Soon</button>
+
+<script>
+  const quotes = [
+    "Study while others are sleeping.",
+    "Small progress every day leads to big results.",
+    "Your future self will thank you.",
+    "Discipline beats motivation.",
+    "Focus now, relax later."
+  ];
+
+  function newQuote() {
+    const random = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").innerText = quotes[random];
+  }
+
+  newQuote();
+</script>
+</body>
+</html>
