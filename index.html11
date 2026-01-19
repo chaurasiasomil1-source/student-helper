@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Helper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body {
+    font-family: system-ui, Arial;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 20px;
+    margin: 0;
+  }
+
+  h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .box {
+    background: white;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    margin-top: 0;
+    color: #333;
+  }
+
+  p {
+    color: #555;
+    line-height: 1.5;
+  }
+
+  button {
+    padding: 12px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<h1>🎓 Student Helper</h1>
+<div class="box">
+  <h2>🎓 Select Your Class</h2>
+  <select onchange="showClass(this.value)">
+    <option value="">-- Choose Class --</option>
+    <option value="8">Class 8</option>
+    <option value="9">Class 9</option>
+    <option value="10">Class 10</option>
+    <option value="11">Class 11</option>
+    <option value="12">Class 12</option>
+  </select>
+
+  <p id="classInfo">Please select your class.</p>
+</div>
+<div class="box">
+  <h2>📌 Motivation</h2>
+  <p id="quote">Loading...</p>
+  <button onclick="newQuote()">New Quote</button>
+</div>
+
+<div class="box">
+  <h2>⏰ Study Timetable</h2>
+  <p>Morning: Study new topics</p>
+  <p>Afternoon: Practice questions</p>
+  <p>Evening: Revision</p>
+</div>
+
+<div class="box">
+  <h2>📚 Exam Tips</h2>
+  <p>✔ Revise daily</p>
+  <p>✔ Practice previous papers</p>
+  <p>✔ Sleep well before exam</p>
+</div>
+
+<button>More Features Coming Soon</button>
+
+<script>
+  const quotes = [
+    "Study while others are sleeping.",
+    "Small progress every day leads to big results.",
+    "Your future self will thank you.",
+    "Discipline beats motivation.",
+    "Focus now, relax later."
+  ];
+
+  function newQuote() {
+    const random = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").innerText = quotes[random];
+  }
+
+  newQuote();
+</script>
+  const quotes = [
+    "Study while others are sleeping.",
+    "Small progress every day leads to big results.",
+    "Your future self will thank you.",
+    "Discipline beats motivation.",
+    "Focus now, relax later."
+  ];
+
+  function newQuote() {
+    const random = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").innerText = quotes[random];
+  }
+
+  newQuote();
+<script>
+function showClass(classNum) {
+  let info = "";
+
+  if (classNum === "8") {
+    info = "Focus on basics. Maths & Science are key.";
+  } else if (classNum === "9") {
+    info = "Build strong concepts. Start regular revision.";
+  } else if (classNum === "10") {
+    info = "Board year! Practice previous papers seriously.";
+  } else if (classNum === "11") {
+    info = "Concept-heavy year. Understand, don’t memorize.";
+  } else if (classNum === "12") {
+    info = "Critical year. Balance boards + competitive prep.";
+  }
+
+  document.getElementById("classInfo").innerText = info;
+}
+
+</script>
+</body>
+</html>
